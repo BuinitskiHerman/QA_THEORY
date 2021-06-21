@@ -1,0 +1,78 @@
+Ввести команду 
+ssh-keygen -t rsa -C "BuinitskiHerman"
+
+Далее просто жмем Enter и получаем ssh-ключ.
+SSH ключ лежит в файле id_rsa.pub, который лежит в папке .ssh
+Открыть файл id_rsa.pub и скопировать из него ключ весь от начала до конца.
+Открыть наш GitHUB.
+Кликнуть по иконке аккаунта справа в углу -> Settings -> SSH and GPG keys.
+Придумать любое имя для ключа и ввести его в соответствующее поле.
+
+Также нужно 
+Поставить на локальный гит несколько настроек:
+git config --global user.name "BuinitskiHerman"
+git config --global user.email "buinitskiherman@gmail.com"
+
+Создать репозиторий на GitHUB -> зеленая кнопка Code и скопировать из него SSH.
+
+Ввести в терминал, предварительно создав папку для репозитория и зайдя в нее
+git clone git@github.com:BuinitskiHerman/test1.git
+
+Проверить список файлов в папке
+ls -la
+
+Проверить статус 
+git status
+
+Изначально ответом будет:
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+Далее создать файл
+> file_1.txt
+
+Снова проверить статус
+git status
+
+Ответ:
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file_1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Гит не отслеживает его изменения. Нужно это исправить.
+git add названиефайла (добавить определенный файл)
+git add . (добавить все файлы)
+
+После этого вновь
+git status
+
+Ответ:
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file_1.txt
+
+Коммитим:
+git commit -m "commit file_1.txt"
+
+Запушить:
+git push
+
+Проверить GitHUBе
+
+
+
+
+
+
+
+
